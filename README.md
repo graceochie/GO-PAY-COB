@@ -43,3 +43,32 @@ To install GO-PAY-COB, follow these steps:
 ## Configuration
 
 
+
+## Set up Local Env
+
+First, ensure you have Python installed. Then, create a virtual environment and install Django.
+
+```sh
+python3 -m venv gopay
+source gopay/bin/activate
+```
+
+Once your virtual environment is activated, you can install Django using pip.
+
+```sh
+pip install django
+pip show django
+
+```
+
+Create new Django project using the django-admin command and run the server.
+
+```sh
+django-admin startproject gopaycob
+cd gopaycob
+python manage.py runserver
+```
+
+
+By default, the development server runs on http://127.0.0.1:8000/. Open this URL in your web browser to see the default Django welcome page.
+
