@@ -50,7 +50,9 @@ First, ensure you have Python installed. Then, create a virtual environment and 
 
 ```sh
 python3 -m venv gopay
-source gopay/bin/activate
+source gopay/bin/activate 
+For Windows run this instead: gopay\Scripts\activate
+
 ```
 
 Once your virtual environment is activated, you can install Django using pip.
