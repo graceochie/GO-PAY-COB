@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Sales Dashboard</h1>
+        <div class="row">
+            <div class="col-md-6">
+                <canvas id="revenueChart"></canvas>
+            </div>
+            <div class="col-md-6">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Revenue</th>
+                            <th>Product</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for sale in sales_data %}
+                        <tr>
+                            <td>{{ sale.date }}</td>
+                            <td>{{ sale.revenue }}</td>
+                            <td>{{ sale.product }}</td>
+                        </tr>
+                        {% empty %}
+                        <tr>
+                            <td colspan="3">No data available</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var ctx = document.getElementById('revenueChart').getContext('2d');
+        var chart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: [{% for sale in sales_data %}'{{ sale.date }}'{% if not forloop.last %},{% endif %}{% endfor %}],
+                datasets: [{
+                    label: 'Revenue',
+                    backgroundColor: 'rgba(0, 123, 255, 0.5)',
+                    borderColor: 'rgba(0, 123, 255, 1)',
+                    data: [{% for sale in sales_data %}{{ sale.revenue }}{% if not forloop.last %},{% endif %}{% endfor %}]
+                }]
+            },
+            options: {}
+        });
+    </script>
+</body>
+</html>
