@@ -1,7 +1,7 @@
-# GO-PAY-COB
+# GO-PAY
 
 ## Overview
-GO-PAY-COB is a user-friendly application designed to simplify the process of splitting payments among friends. Whether it's for a dinner bill, a group trip, or shared expenses, GO-PAY-COB ensures that everyone pays their fair share. The app generates payment links and sends them via email, making it easy for each participant to settle their portion of the bill.
+GO-PAY is a user-friendly application designed to simplify the process of splitting payments among friends. Whether it's for a dinner bill, a group trip, or shared expenses, GO-PAY-COB ensures that everyone pays their fair share. The app generates payment links and sends them via email, making it easy for each participant to settle their portion of the bill.
 
 ## Features
 - **Easy Bill Splitting:** Automatically calculate and divide expenses among friends or group members.
