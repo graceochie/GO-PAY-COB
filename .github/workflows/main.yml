@@ -1,3 +1,8 @@
+
+permissions:
+  id-token: write   # Required for OIDC authentication
+  contents: read    # Allows the workflow to read repo contents
+
 name: Build and Deploy Docker Image to ACR
 
 on:
